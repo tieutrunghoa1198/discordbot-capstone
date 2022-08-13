@@ -24,12 +24,13 @@ export async function DiscordRequest(endpoint, options) {
   // Use node-fetch to make requests
   const res = await fetch(url, {
     headers: {
-      Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
+      'Authorization': `Bot ${process.env.DISCORD_TOKEN}`,
       'Content-Type': 'application/json; charset=UTF-8',
-      'User-Agent': 'DiscordBot (https://github.com/discord/discord-example-app, 1.0.0)',
     },
     ...options
   });
+
+  console.log(process.env.DISCORD_TOKEN);
   // throw API errors
   if (!res.ok) {
     const data = await res.json();
