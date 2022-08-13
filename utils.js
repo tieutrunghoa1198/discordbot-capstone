@@ -1,4 +1,5 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env.sample'})
 import fetch from 'node-fetch';
 import { verifyKey } from 'discord-interactions';
 
